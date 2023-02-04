@@ -23,7 +23,16 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log(GetMouseWorldPosition());
+            var worldPos = GetMouseWorldPosition();
+            var gridManager = GameObject.Find("GridManager").GetComponent<GridManager>();
+
+            /*
+            var tile = gridManager.GetTileFromWorldPosition(worldPos);
+            if(tile != null)
+                Debug.Log($"the name: {tile.Name}");
+            */
+
+            gridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
         }
     }
 

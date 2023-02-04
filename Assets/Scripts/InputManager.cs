@@ -24,15 +24,14 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             var worldPos = GetMouseWorldPosition();
-            var gridManager = GameObject.Find("GridManager").GetComponent<GridManager>();
 
             
-            var plant = gridManager.GetPlantFromWorldPosition(worldPos);
+            var plant = GameManager.Instance.GridManager.GetPlantFromWorldPosition(worldPos);
             if(plant != null)
                 Debug.Log($"the name: {plant.name}");
-            
 
-            gridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
+
+            GameManager.Instance.GridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
             GameManager.Instance.SeedManager.AddSeeds();
         }
     }

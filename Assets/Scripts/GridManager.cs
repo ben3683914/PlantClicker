@@ -11,7 +11,6 @@ public class GridManager : MonoBehaviour
     public Tilemap plantsTilemap;
     public List<Tile> baseTiles;
     public Grid grid;
-    public PlantManager plantManager;   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,7 @@ public class GridManager : MonoBehaviour
         if (tile == null)
             return null;
 
-        return plantManager.plantTypes.FirstOrDefault(plant => plant.Tile);
+        return GameManager.Instance.PlantManager.plantTypes.FirstOrDefault(plant => plant.Tile);
     }
 
     public Plant GetPlantFromWorldPosition(Vector3 worldPosition)
@@ -42,7 +41,7 @@ public class GridManager : MonoBehaviour
 
     public void PlaceTileAtCell(Tiles.Type type, Vector3Int cellCoords)
     {
-        plantsTilemap.SetTile(cellCoords, plantManager.GetPlantType(type).Tile);
+        plantsTilemap.SetTile(cellCoords, GameManager.Instance.PlantManager.GetPlantType(type).Tile);
     }
 
     public void PlaceTileAtWorldPosition(Tiles.Type type, Vector3 worldPosition)

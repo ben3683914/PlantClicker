@@ -9,10 +9,8 @@ namespace Assets.Scripts
     {
 
         public List<Plant> plantTypes;
-
         public GameObject plantTypesGameObject;
 
-        public PlantManager Instance;
         // Use this for initialization
         void Start()
         {
@@ -28,11 +26,10 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            Instance = this;
         }
 
         private List<Plant> GetPlantTypes() { 
-            return plantTypesGameObject.GetComponentsInChildren<Plant>().OrderBy(plant => plant.level).ToList();
+            return GetComponentsInChildren<Plant>().OrderBy(plant => plant.level).ToList();
         }
 
         public Plant GetPlantType(Tiles.Type type)
@@ -40,5 +37,9 @@ namespace Assets.Scripts
             return plantTypes.FirstOrDefault(plant => plant.Type == type);
         }
 
+        public Plant GetPlantType(int level)
+        {
+            return plantTypes.FirstOrDefault(plant => plant.level == level);
+        }
     }
 }

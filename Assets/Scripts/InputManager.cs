@@ -26,11 +26,11 @@ public class InputManager : MonoBehaviour
             var worldPos = GetMouseWorldPosition();
             var gridManager = GameObject.Find("GridManager").GetComponent<GridManager>();
 
-            /*
-            var tile = gridManager.GetTileFromWorldPosition(worldPos);
-            if(tile != null)
-                Debug.Log($"the name: {tile.Name}");
-            */
+            
+            var plant = gridManager.GetPlantFromWorldPosition(worldPos);
+            if(plant != null)
+                Debug.Log($"the name: {plant.name}");
+            
 
             gridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf6c199ef447f864e87700ff3f1b9bd9
+guid: e614be7886aac2344b61a616142f0ad3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass_tile
+      name: hoe_tool
       rect:
         serializedVersion: 2
         x: 0
-        y: 576
-        width: 64
-        height: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,71 +121,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e613e649597c7a14ba4ba6c7d421700c
-      internalID: 367538385
+      spriteID: c3f7514fe2d114d488e003cdd4e920a4
+      internalID: 650959559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: potatoe_tile_0
+      name: hoe_too
       rect:
         serializedVersion: 2
-        x: 64
-        y: 576
+        x: 0
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 876710a4c85146e40b2a2300cc9b16e6
-      internalID: -183642776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: potatoe_tile_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4819cd294ceafa14a99710e79a469ee1
-      internalID: 1979751051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: potatoe_tile_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab555e1aab28f7b4c9bd906a0fc6fc2a
-      internalID: 86841812
+      spriteID: 8859965845ab79345970679518ce1870
+      internalID: 916776260
       vertices: []
       indices: 
       edges: []
@@ -201,17 +159,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      potatoe_tile_1: 1979751051
-      potato_tile_0: -1938683942
-      potatoe_tile_2: 86841812
-      Default_0: 828488420
-      potato_tile_2: 1213918374
-      potatoe_tile_0: -183642776
-      Default_5: -460921539
-      potato_tile_1: -992719567
-      Default_1: -856998438
-      grass_tile: 367538385
-      Default_4: -2131484907
+      hoe_too: 916776260
+      hoe_tool: 650959559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

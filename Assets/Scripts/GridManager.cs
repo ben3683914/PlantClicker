@@ -9,7 +9,6 @@ using UnityEngine.Tilemaps;
 public class GridManager : MonoBehaviour
 {
     public Tilemap plantsTilemap;
-    public List<Tile> baseTiles;
     public Grid grid;
     // Start is called before the first frame update
     void Start()

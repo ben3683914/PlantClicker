@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Manager
 {
     public Camera camera;
 
@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(GameManager.GridManager.GetGridCellAtWorldPosition(GetMouseWorldPosition()));
     }
 
     public void ButtonClick(InputAction.CallbackContext context)

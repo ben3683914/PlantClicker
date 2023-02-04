@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class PlantManager : MonoBehaviour
+    public class PlantManager : Manager
     {
 
         public List<Plant> plantTypes;

@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class GridManager : MonoBehaviour
+public class GridManager : Manager
 {
     public Tilemap plantsTilemap;
     public List<Tile> baseTiles;

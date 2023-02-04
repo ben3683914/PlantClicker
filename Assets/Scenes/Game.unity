@@ -387,7 +387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f04a7ac73658a040bd08d18ab80e3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantTypes: []
+  plantTypes:
+  - {fileID: 883348069}
+  - {fileID: 451759578}
   plantTypesGameObject: {fileID: 1117756687}
   Instance: {fileID: 0}
 --- !u!1 &451759576
@@ -434,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3a8fea5cc74f8409696d41ec8a6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: 2475069676449d44182a36be8e167637, type: 2}
+  Tile: {fileID: 11400000, guid: ec850828d08e7ea46a7178fe13f3c192, type: 2}
   Type: 1
   level: 0
 --- !u!1 &519420028
@@ -3429,7 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3a8fea5cc74f8409696d41ec8a6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: 5331aa8d6b49e814e80919b3371a02b1, type: 2}
+  Tile: {fileID: 11400000, guid: cbafafdf7a2ad3a44a8a6645c1fcfc2c, type: 2}
   Type: 0
   level: 0
 --- !u!1 &1117756687
@@ -3681,6 +3683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2087330676}
   - {fileID: 2095929039}
   - {fileID: 1344507372}
   - {fileID: 1134177851}
@@ -3688,6 +3691,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2087330675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087330676}
+  - component: {fileID: 2087330677}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087330676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087330675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2045773572}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087330677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087330675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2df7263fdbeb2d4fb8407cb95ea89e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
+  GridManager: {fileID: 2095929040}
+  InputManager: {fileID: 1344507373}
+  ClickerManager: {fileID: 1134177852}
+  PlantManager: {fileID: 188238811}
 --- !u!1 &2095929038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,8 +3785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantsTilemap: {fileID: 120689771}
-  baseTiles:
-  - {fileID: 11400000, guid: 5331aa8d6b49e814e80919b3371a02b1, type: 2}
-  - {fileID: 11400000, guid: 2475069676449d44182a36be8e167637, type: 2}
+  baseTiles: []
   grid: {fileID: 584947611}
   plantManager: {fileID: 188238811}

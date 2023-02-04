@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : Manager
+public class InputManager : MonoBehaviour
 {
     public Camera camera;
 
@@ -16,7 +16,7 @@ public class InputManager : Manager
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameManager.GridManager.GetGridCellAtWorldPosition(GetMouseWorldPosition()));
+        //Debug.Log(GameManager.Instance.GridManager.GetGridCellAtWorldPosition(GetMouseWorldPosition()));
     }
 
     public void ButtonClick(InputAction.CallbackContext context)
@@ -33,6 +33,7 @@ public class InputManager : Manager
             
 
             gridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
+            GameManager.Instance.SeedManager.AddSeeds();
         }
     }
 

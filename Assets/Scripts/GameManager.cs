@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager Instance;
+    public static GameManager Instance;
     public GridManager GridManager;
     public InputManager InputManager;
     public ClickerManager ClickerManager;
     public PlantManager PlantManager;
+    public SeedManager SeedManager;
 
     private void Awake()
     {

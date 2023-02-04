@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class Manager : MonoBehaviour
+public abstract class UIComponent : MonoBehaviour
 {
-    public GameManager GameManager;
+    public UIManager UIManager;
     private void Awake()
     {
-        GameManager = GameObject.FindObjectOfType<GameManager>().Instance;
+        UIManager = GetComponentInParent<UIManager>();
     }
 
 }

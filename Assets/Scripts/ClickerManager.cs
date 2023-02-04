@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickerManager : Manager
+public class ClickerManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

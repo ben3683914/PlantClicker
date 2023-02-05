@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Potatoe : MonoBehaviour
 {
+    public Sprite[] GrowthSprites;
+    public SpriteRenderer spriteRenderer;
+
     Tile Tile;
+    private PotatoeState currentState;
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Tile = GetComponent<Tile>();
         Tile.Type = TilesManager.TileType.Potatoe;
-        StartCoroutine(Age());
+        SetState(new PotatoeBeginState(this));
     }
 
-    public void Die()
+    public void SetState(PotatoeState state)
     {
-        var grid = GameManager.Instance.MapManager.grid;
-        GameManager.Instance.MapManager.PlantsMap.RemoveTile(grid.GetCellAtWorldPosition(transform.position));
-    }
-
-    private IEnumerator Age()
-    {
-        yield return new WaitForSeconds(3.0f);
-        Debug.Log("Aged out...");
-        Die();
+        currentState = state;
+        StartCoroutine(currentState.Start());
     }
 }

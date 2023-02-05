@@ -6,4 +6,5 @@ public class Tile : MonoBehaviour
 {
     public TilesManager.TileType Type;
     public bool IsPlantable = false;
+    public bool IsHarvestable = false;
 }

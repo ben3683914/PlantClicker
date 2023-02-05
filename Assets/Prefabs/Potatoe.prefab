@@ -93,3 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2119152fc7c54d04da170b46fa1293fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GrowthSprites:
+  - {fileID: 1979751051, guid: cf6c199ef447f864e87700ff3f1b9bd9, type: 3}
+  - {fileID: 86841812, guid: cf6c199ef447f864e87700ff3f1b9bd9, type: 3}

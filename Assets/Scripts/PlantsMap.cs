@@ -100,7 +100,7 @@ public class PlantsMap : MonoBehaviour
 
         foreach (var cell in cells)
         {
-            RemoveTile(new Vector2(coords.x, coords.y));
+            RemoveTile(new Vector2(cell.x, cell.y));
         }
     }
 }

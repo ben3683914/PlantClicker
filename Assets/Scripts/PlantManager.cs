@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts
 {
@@ -40,6 +41,11 @@ namespace Assets.Scripts
         public Plant GetPlantType(int level)
         {
             return plantTypes.FirstOrDefault(plant => plant.level == level);
+        }
+
+        public Plant GetPlantType(Tile tile)
+        {
+            return plantTypes.FirstOrDefault(plant => plant.Tiles.Contains(tile));
         }
     }
 }

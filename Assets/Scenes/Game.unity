@@ -534,7 +534,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3a8fea5cc74f8409696d41ec8a6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: 3eed9648784db4545ad2cadc97465319, type: 2}
+  Tiles:
+  - {fileID: 11400000, guid: 3eed9648784db4545ad2cadc97465319, type: 2}
+  - {fileID: 11400000, guid: a3ab70f9ddc87fe41a52bfbdf8b44280, type: 2}
+  - {fileID: 11400000, guid: ea1bd9b0b01c08246a19b2ca6e572af3, type: 2}
   Type: 1
   level: 1
 --- !u!1 &459786270
@@ -1137,7 +1140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3a8fea5cc74f8409696d41ec8a6c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: cbafafdf7a2ad3a44a8a6645c1fcfc2c, type: 2}
+  Tiles:
+  - {fileID: 11400000, guid: cbafafdf7a2ad3a44a8a6645c1fcfc2c, type: 2}
   Type: 0
   level: 0
 --- !u!1 &902719069

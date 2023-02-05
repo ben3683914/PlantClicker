@@ -7,7 +7,8 @@ public class PotatoeGrowStageHarvestable : PotatoeState
 {
     public PotatoeGrowStageHarvestable(Potatoe potatoe) : base(potatoe)
     {
-        potatoe.spriteRenderer.color = new Color(1f,0.85f,0.80f, 1f);
+        //potatoe.spriteRenderer.color = new Color(1f,0.85f,0.80f, 1f);
+        potatoe.spriteRenderer.sprite = potatoe.GrowthSprites[2];
         potatoe.GetComponent<Tile>().IsHarvestable= true;
     }
 }

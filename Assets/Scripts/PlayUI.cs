@@ -18,6 +18,8 @@ public class PlayUI : UIComponent
     private void Start()
     {
         GameManager.Instance.SeedManager.OnScoreChanged.AddListener(OnSeedCountChanged);
+        
+
         clickerManager = GameManager.Instance.ClickerManager;
         seedManager = GameManager.Instance.SeedManager;
 
@@ -27,10 +29,12 @@ public class PlayUI : UIComponent
 
     private void Update()
     {
-        if (seedManager.GetSeeds() >= clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier)
+        if (seedManager.GetSeeds() >= GetCost())
             UpgradeIcon.enabled = true;
         else
             UpgradeIcon.enabled = false;
+
+        OnLevelChanged();
     }
 
     void OnSeedCountChanged()
@@ -44,12 +48,17 @@ public class PlayUI : UIComponent
         levelMatrixText.text = $"{clickerManager.clickLevel}x{clickerManager.clickLevel}";
     }
 
+    int GetCost()
+    {
+        return (clickerManager.clickLevel + 1) * clickerManager.clickLevel;
+    }
+
     public void OnPlantToolClick()
     {
         Debug.Log("planter tool selected");
-        if (seedManager.GetSeeds() >= clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier)
+        if (seedManager.GetSeeds() >= GetCost())
         {
-            seedManager.AddSeeds(-(clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier));
+            seedManager.AddSeeds(-GetCost());
             clickerManager.clickLevel++;
         }
     }

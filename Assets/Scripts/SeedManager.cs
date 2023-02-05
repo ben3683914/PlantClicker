@@ -16,7 +16,7 @@ public class SeedManager : MonoBehaviour
 
     public void Start()
     {
-        AddSeeds(15); 
+        AddSeeds(2); 
     }
 
     public void AddSeeds(int amount = 1)

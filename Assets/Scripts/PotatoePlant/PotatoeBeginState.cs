@@ -8,7 +8,7 @@ public class PotatoeBeginState : PotatoeState
     private float growTime;
     public PotatoeBeginState(Potatoe potatoe) : base(potatoe)
     {
-        growTime = Random.Range(3f, 4f);
+        growTime = Random.Range(3f, 5f);
     }
 
     public override IEnumerator Start()

@@ -190,6 +190,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: potatoe_tile_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd58d5af80038849b05ed87c12b8429
+      internalID: 828488420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -204,7 +225,7 @@ TextureImporter:
       potatoe_tile_1: 1979751051
       potato_tile_0: -1938683942
       potatoe_tile_2: 86841812
-      Default_0: 828488420
+      potatoe_tile_3: 828488420
       potato_tile_2: 1213918374
       potatoe_tile_0: -183642776
       Default_5: -460921539

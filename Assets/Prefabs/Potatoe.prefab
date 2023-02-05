@@ -96,3 +96,5 @@ MonoBehaviour:
   GrowthSprites:
   - {fileID: 1979751051, guid: cf6c199ef447f864e87700ff3f1b9bd9, type: 3}
   - {fileID: 86841812, guid: cf6c199ef447f864e87700ff3f1b9bd9, type: 3}
+  - {fileID: 828488420, guid: cf6c199ef447f864e87700ff3f1b9bd9, type: 3}
+  spriteRenderer: {fileID: 0}

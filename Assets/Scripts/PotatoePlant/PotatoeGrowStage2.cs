@@ -8,7 +8,7 @@ public class PotatoeGrowStage2 : PotatoeState
     private float growTime;
     public PotatoeGrowStage2(Potatoe potatoe) : base(potatoe)
     {
-        growTime = Random.Range(2f, 3f);
+        growTime = Random.Range(2f, 4f);
         potatoe.spriteRenderer.sprite = potatoe.GrowthSprites[0];
     }
 

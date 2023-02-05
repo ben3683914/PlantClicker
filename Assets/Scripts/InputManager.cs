@@ -21,7 +21,8 @@ public class InputManager : MonoBehaviour
         {
             if (context.performed)
             {
-                GameManager.Instance.ClickerManager.PlacePLant(GetMouseWorldPosition());              
+                GameManager.Instance.ClickerManager.PlacePLant(GetMouseWorldPosition());
+                Debug.Log("button clicked");
             }
         }
     }
@@ -42,5 +43,5 @@ public class InputManager : MonoBehaviour
     void EnablePlayActions()
     {
         IsPlayActionsEnabled = true;
-    } 
+    }
 }

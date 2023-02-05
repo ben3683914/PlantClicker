@@ -24,7 +24,7 @@ public class PlayUI : UIComponent
     void OnSeedCountChanged()
     {
         var seeds = GameManager.Instance.SeedManager.GetSeeds();
-        seedCount.text = $"Seeds: { seeds }";
+        seedCount.text = $"Seeds: {seeds}";
     }
 
     void OnLevelChanged()

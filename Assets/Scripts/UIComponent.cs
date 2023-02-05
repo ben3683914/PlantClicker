@@ -7,10 +7,9 @@ using UnityEngine;
 
 public abstract class UIComponent : MonoBehaviour
 {
-    public UIManager UIManager;
-    private void Awake()
-    {
-        UIManager = GetComponentInParent<UIManager>();
-    }
-
+    //public UIManager UIManager;
+    //private void Awake()
+    //{
+    //    UIManager = GetComponentInParent<UIManager>();
+    //}
 }

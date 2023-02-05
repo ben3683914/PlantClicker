@@ -70,6 +70,14 @@ public class PlantsMap : MonoBehaviour
         return tiles;
     }
 
+    public void SetTile(int size)
+    {
+        // for size
+        //  get coords where mouse
+        //  coords[0] + new vector3(size)
+        //  setTile()
+    }
+
     public void RemoveTile(Vector2 coords)
     {
         GameObject go = Plants.ContainsKey(coords) ? Plants[coords] : null;

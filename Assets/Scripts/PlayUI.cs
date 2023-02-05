@@ -5,20 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayUI : UIComponent
 {
     public TextMeshProUGUI seedCount;
     public TextMeshProUGUI levelMatrixText;
-
-    public int level = 2;
+    private ClickerManager clickerManager;
+    private SeedManager seedManager;
+    public Image UpgradeIcon;
 
     private void Start()
     {
         GameManager.Instance.SeedManager.OnScoreChanged.AddListener(OnSeedCountChanged);
+        clickerManager = GameManager.Instance.ClickerManager;
+        seedManager = GameManager.Instance.SeedManager;
 
         OnSeedCountChanged();
         OnLevelChanged();
+    }
+
+    private void Update()
+    {
+        if (seedManager.GetSeeds() >= clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier)
+            UpgradeIcon.enabled = true;
+        else
+            UpgradeIcon.enabled = false;
     }
 
     void OnSeedCountChanged()
@@ -29,12 +41,17 @@ public class PlayUI : UIComponent
 
     void OnLevelChanged()
     {
-        levelMatrixText.text = $"{level}x{level}";
+        levelMatrixText.text = $"{clickerManager.clickLevel}x{clickerManager.clickLevel}";
     }
 
     public void OnPlantToolClick()
     {
         Debug.Log("planter tool selected");
+        if (seedManager.GetSeeds() >= clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier)
+        {
+            seedManager.AddSeeds(-(clickerManager.clickLevel * clickerManager.levelUpgradeCostMultiplier));
+            clickerManager.clickLevel++;
+        }
     }
 
     public void OnHarvestToolClick()

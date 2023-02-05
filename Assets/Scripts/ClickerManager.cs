@@ -9,6 +9,7 @@ public class ClickerManager : MonoBehaviour
 {
 
     public int clickLevel = 1;
+    public int levelUpgradeCostMultiplier = 10;
     public TilesManager.TileType selectedPlant;
 
     //// Start is called before the first frame update

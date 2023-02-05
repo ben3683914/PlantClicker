@@ -11,7 +11,7 @@ public class MapManager : MonoBehaviour
 
     void Awake()
     {
-        grid = new Grid(15, 10, 10f, new Vector3(0, 0));
+        grid = new Grid(100, 100, 10f, new Vector3(0, 0));
 
         GroundMap = new GroundMap(grid);
         PlantsMap = new PlantsMap(grid);

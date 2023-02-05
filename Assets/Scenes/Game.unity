@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickLevel: 0
-  plant: {fileID: 451759578}
+  selectedPlant: {fileID: 0}
 --- !u!1 &1260045496
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,7 +6162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIManager: {fileID: 0}
   seedCount: {fileID: 459786272}
-  levelMatrixText: {fileID: 669750817}
+  levelMatrixText: {fileID: 0}
   level: 2
 --- !u!1 &1804768230
 GameObject:
@@ -6746,5 +6746,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantsTilemap: {fileID: 1134109999}
-  groundTilemap: {fileID: 0}
   grid: {fileID: 52470785}

@@ -21,16 +21,7 @@ public class InputManager : MonoBehaviour
         {
             if (context.performed)
             {
-                var worldPos = GetMouseWorldPosition();
-
-
-                var plant = GameManager.Instance.GridManager.GetPlantFromWorldPosition(worldPos);
-                if (plant != null)
-                    Debug.Log($"the name: {plant.name}");
-
-
-                GameManager.Instance.GridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
-                GameManager.Instance.SeedManager.AddSeeds();
+                GameManager.Instance.ClickerManager.PlacePLant(GetMouseWorldPosition());              
             }
         }
     }

@@ -7,32 +7,31 @@ public class InputManager : MonoBehaviour
 {
     public Camera camera;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool IsPlayActionsEnabled = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        //Debug.Log(GameManager.Instance.GridManager.GetGridCellAtWorldPosition(GetMouseWorldPosition()));
+        GameManager.Instance.UIManager.OnDisablePlayActions.AddListener(DisablePlayActions);
+        GameManager.Instance.UIManager.OnEnablePlayActions.AddListener(EnablePlayActions);
     }
 
     public void ButtonClick(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (IsPlayActionsEnabled)
         {
-            var worldPos = GetMouseWorldPosition();
-
-            
-            var plant = GameManager.Instance.GridManager.GetPlantFromWorldPosition(worldPos);
-            if(plant != null)
-                Debug.Log($"the name: {plant.name}");
+            if (context.performed)
+            {
+                var worldPos = GetMouseWorldPosition();
 
 
-            GameManager.Instance.GridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
-            GameManager.Instance.SeedManager.AddSeeds();
+                var plant = GameManager.Instance.GridManager.GetPlantFromWorldPosition(worldPos);
+                if (plant != null)
+                    Debug.Log($"the name: {plant.name}");
+
+
+                GameManager.Instance.GridManager.PlaceTileAtWorldPosition(Tiles.Type.PotatoPlant, worldPos);
+                GameManager.Instance.SeedManager.AddSeeds();
+            }
         }
     }
 
@@ -44,5 +43,13 @@ public class InputManager : MonoBehaviour
         return worldPosition;
     }
 
+    void DisablePlayActions()
+    {
+        IsPlayActionsEnabled = false;
+    }
 
+    void EnablePlayActions()
+    {
+        IsPlayActionsEnabled = true;
+    } 
 }

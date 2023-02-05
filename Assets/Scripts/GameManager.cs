@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public ClickerManager ClickerManager;
     public PlantManager PlantManager;
     public SeedManager SeedManager;
+    public UIManager UIManager;
 
     private void Awake()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static TilesManager;
 
 public class PlantsMap : MonoBehaviour
 {
@@ -39,18 +40,59 @@ public class PlantsMap : MonoBehaviour
         GameObject go = null;
 
         var tile = (GameManager.Instance.TilesManager.GetTile(tileType).GetComponent<Tile>());
-        if (tile.IsPlantable)
+        var plant = GetPlantAtGridCell(coords);
+        var seeds = GameManager.Instance.SeedManager.GetSeeds();
+        var seedCost = 1 * (int) tileType;
+        if (tile.IsPlantable && plant == null && seeds >= seedCost)
         {
             go = Instantiate(GameManager.Instance.TilesManager.GetTile(tileType), grid.GetPlaceableCellWorldPosition(coords), Quaternion.identity);
             Plants[coords] = go.gameObject;
+            GameManager.Instance.SeedManager.AddSeeds(seedCost * -1);
         }
 
-        return go.GetComponent<Tile>();
+        return go?.GetComponent<Tile>();
+    }
+
+    public List<Tile> SetTiles(TilesManager.TileType tileType, Vector2Int coords, int size)
+    {
+        var cells = grid.GetSquareRangeOfCells(coords, size);
+        var tiles = new List<Tile>();
+
+        foreach (var cell in cells)
+        {
+            var tile = SetTile(tileType, cell);
+            if(tile != null)
+            {
+                tiles.Add(tile);
+            }
+        }
+
+        return tiles;
     }
 
     public void RemoveTile(Vector2 coords)
     {
-        Destroy(Plants[coords]);
-        Plants[coords] = null;
+        GameObject go = Plants.ContainsKey(coords) ? Plants[coords] : null;
+        if (go != null)
+        {
+            var tile = go.GetComponent<Tile>();
+            if (tile.IsHarvestable)
+            {
+                var seedYeild = 3 * (int)tile.Type;
+                Destroy(go);
+                Plants[coords] = null;
+                GameManager.Instance.SeedManager.AddSeeds(seedYeild);
+            }
+        }
+    }
+
+    public void RemoveTiles(Vector2Int coords, int size)
+    {
+        var cells = grid.GetSquareRangeOfCells(coords, size);
+
+        foreach (var cell in cells)
+        {
+            RemoveTile(new Vector2(coords.x, coords.y));
+        }
     }
 }

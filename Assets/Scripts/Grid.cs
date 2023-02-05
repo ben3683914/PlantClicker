@@ -88,6 +88,19 @@ public class Grid
         return cellSize;
     }
 
+    public IList<Vector2Int> GetSquareRangeOfCells(Vector2Int startPos, int range)
+    {
+        Vector2Int cellRange = new Vector2Int(range, range);
+        Vector2Int[] cells = new Vector2Int[range * range];
+
+        for (int i = 0; i < cells.Length; i++)
+        {
+            var cell = new Vector2Int(i % cellRange.x, i / cellRange.y * -1);
+            cells[i] = cell + startPos;
+        }
+        return cells;
+    }
+
     private void SetValue(int x, int y, int value)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)

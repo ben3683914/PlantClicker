@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
         {
             if (context.performed)
             {
-                GameManager.Instance.ClickerManager.PlacePLant(GetMouseWorldPosition());
+                GameManager.Instance.ClickerManager.ClickPlant(GetMouseWorldPosition());
                 Debug.Log("button clicked");
             }
         }

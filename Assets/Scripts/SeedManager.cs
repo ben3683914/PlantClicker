@@ -14,6 +14,11 @@ public class SeedManager : MonoBehaviour
             OnScoreChanged = new UnityEvent();
     }
 
+    public void Start()
+    {
+        AddSeeds(10); 
+    }
+
     public void AddSeeds(int amount = 1)
     {
         seeds += amount;

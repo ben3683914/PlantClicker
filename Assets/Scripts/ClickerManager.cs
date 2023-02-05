@@ -17,28 +17,20 @@ public class ClickerManager : MonoBehaviour
         selectedPlant = TilesManager.TileType.Potatoe;
     }
 
-    public void PlacePLant(Vector3 worldPos)
+    public void ClickPlant(Vector3 worldPos)
     {
         var grid = GameManager.Instance.MapManager.grid;
         var plantsMap = GameManager.Instance.MapManager.PlantsMap;
         var cell = grid.GetCellAtWorldPosition(worldPos);
         var plant = plantsMap.GetPlantAtGridCell(cell);
 
-        if(plant == null)
+        if (plant != null)
         {
-            var tile = plantsMap.SetTile(selectedPlant, cell);
-            int seeds = 1;
-            GameManager.Instance.SeedManager.AddSeeds(seeds);
+            plantsMap.RemoveTiles(cell, clickLevel);
         }
-
-        //var gridmanager = GameManager.Instance.GridManager;
-        //var placedPlant = gridmanager.GetPlantFromWorldPosition(worldPos);
-        //if (placedPlant == null)
-        //{
-        //    var plantedTileData = gridmanager.PlaceTileAtWorldPosition(selectedPlant, worldPos, clickLevel);
-        //    int seeds = plantedTileData.Length * selectedPlant.level * selectedPlant.level;
-
-        //    GameManager.Instance.SeedManager.AddSeeds(seeds);
-        //}
+        else
+        {
+            plantsMap.SetTiles(selectedPlant, cell, clickLevel);
+        }
     }
 }

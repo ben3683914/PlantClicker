@@ -88,7 +88,7 @@ public class Grid
         return cellSize;
     }
 
-    public void SetValue(int x, int y, int value)
+    private void SetValue(int x, int y, int value)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
@@ -98,13 +98,13 @@ public class Grid
         }
     }
 
-    public void SetValue(Vector3 worldPosition, int value)
+    private void SetValue(Vector3 worldPosition, int value)
     {
         var coords = GetCellAtWorldPosition(worldPosition);
         SetValue(coords.x, coords.y, value);
     }
 
-    public int GetValue(int x, int y)
+    private int GetValue(int x, int y)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
             return gridArray[x, y];
@@ -112,7 +112,7 @@ public class Grid
             return 0;
     }
 
-    public int GetValue(Vector3 worldPosition)
+    private int GetValue(Vector3 worldPosition)
     {
         var coords = GetCellAtWorldPosition(worldPosition);
 
